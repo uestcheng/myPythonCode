@@ -1,0 +1,18 @@
+#! /usr/local/bin/env python2.7.5
+#-*- coding: utf-8
+import requests
+import os
+from bs4 import BeautifulSoup
+
+
+def geturl(url=None):
+    if url is None:
+        print "please enter the url"
+    else:
+        url = os.argv[0]
+    detailofurl = requests.get(url)
+    return detailofurl
+
+def analyzationofurl(detailofurl):
+    if isinstance(detailofurl, str):
+        soup = BeautifulSoup(detailofurl)
